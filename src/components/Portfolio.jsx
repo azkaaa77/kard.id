@@ -91,7 +91,7 @@ const projects = [
     category: "Landing Page",
     tags: ["HTML", "CSS"],
     description:
-      "ebsite ensiklopedia astronomi (Space Hub) berkonsep Sci-Fi dengan fitur eksplorasi objek antariksa interaktif dan tata letak data semesta yang futuristik.",
+      "Website ensiklopedia astronomi (Space Hub) berkonsep Sci-Fi dengan fitur eksplorasi objek antariksa interaktif dan tata letak data semesta yang futuristik.",
     accent: "#7C3AED",
     result: "2,000+ objek kosmis terpetakan",
     image: "/images/galaxy.png",
