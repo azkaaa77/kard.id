@@ -9,6 +9,7 @@ import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Preloader from './Preloader';
 
 function App() {
   // Global IntersectionObserver for .reveal elements
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <>
+      <Preloader />
       {/* Noise texture overlay */}
       <div className="noise" />
 

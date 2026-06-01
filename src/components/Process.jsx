@@ -7,7 +7,7 @@ const steps = [
     description: 'Kami mulai dengan memahami bisnis, target audiens, dan goals Anda secara mendalam melalui sesi konsultasi.',
     icon: '🔍',
     duration: '1–2 Hari',
-    accent: '#6C63FF',
+    accent: '#4338CA',
   },
   {
     number: '02',
@@ -15,7 +15,7 @@ const steps = [
     description: 'Tim desainer kami merancang wireframe dan mockup high-fidelity yang bisa Anda review dan feedback sebelum development.',
     icon: '🎨',
     duration: '3–5 Hari',
-    accent: '#EC4899',
+    accent: '#7C3AED',
   },
   {
     number: '03',
@@ -23,7 +23,7 @@ const steps = [
     description: 'Pengembangan dilakukan dengan teknologi modern, clean code, dan daily progress update agar Anda selalu in-the-loop.',
     icon: '⚙️',
     duration: '7–21 Hari',
-    accent: '#00D9A5',
+    accent: '#1D4ED8',
   },
   {
     number: '04',
@@ -31,7 +31,7 @@ const steps = [
     description: 'QA menyeluruh di berbagai device dan browser. Anda mendapat 2 putaran revisi gratis hingga benar-benar puas.',
     icon: '✅',
     duration: '2–3 Hari',
-    accent: '#FFB347',
+    accent: '#4338CA',
   },
   {
     number: '05',
@@ -39,7 +39,7 @@ const steps = [
     description: 'Deploy ke server Anda atau rekomendasi kami, dilengkapi 30 hari free support paska-launch.',
     icon: '🚀',
     duration: '1 Hari',
-    accent: '#6C63FF',
+    accent: '#7C3AED',
   },
 ];
 
@@ -55,12 +55,23 @@ const Process = () => {
   }, []);
 
   return (
-    <section id="proses" className="section">
-      <div className="container">
+    <section id="proses" style={{ position: 'relative', overflow: 'hidden', background: '#080c18', padding: '100px 0' }}>
+
+      {/* ── Fading divider top ── */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(to right, transparent, rgba(229,222,255,0.06), transparent)' }} />
+
+      {/* ── Grid texture ── */}
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(to right, #111827 1px, transparent 1px), linear-gradient(to bottom, #111827 1px, transparent 1px)', backgroundSize: '4rem 4rem', opacity: 0.3, pointerEvents: 'none' }} />
+
+      {/* ── Ambient blobs ── */}
+      <div style={{ position: 'absolute', top: '5%', left: '-100px', width: '480px', height: '480px', borderRadius: '50%', background: '#4338CA', opacity: 0.09, filter: 'blur(120px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '10%', right: '-80px', width: '400px', height: '400px', borderRadius: '50%', background: '#1D4ED8', opacity: 0.08, filter: 'blur(120px)', pointerEvents: 'none' }} />
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '80px' }}>
           <div className="section-label reveal">Cara Kerja</div>
           <h2 className="section-title reveal reveal-delay-1">
-            Proses yang<br /><span className="gradient-text-cool">Transparan & Efisien</span>
+            Proses            <span className="gradient-text-blue">Transparan & Efisien</span>
           </h2>
           <p className="section-subtitle reveal reveal-delay-2" style={{ margin: '0 auto' }}>
             Setiap langkah dirancang untuk memastikan hasil terbaik dengan komunikasi yang jelas dan timeline yang terstruktur.
@@ -87,7 +98,7 @@ const Process = () => {
                   borderRadius: '16px',
                   cursor: 'pointer',
                   transition: 'all 0.4s ease',
-                  background: activeStep === i ? 'rgba(255,255,255,0.04)' : 'transparent',
+                  background: activeStep === i ? 'rgba(67,56,202,0.07)' : 'transparent',
                   position: 'relative',
                 }}
               >
@@ -131,9 +142,10 @@ const Process = () => {
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
                     <h3 style={{
+                      fontFamily: 'var(--font-heading)',
                       fontSize: '16px',
                       fontWeight: '700',
-                      color: activeStep === i ? 'white' : 'var(--text-secondary)',
+                      color: activeStep === i ? 'var(--text-heading)' : 'var(--text-body)',
                       transition: 'color 0.3s',
                     }}>
                       {step.title}
@@ -152,8 +164,9 @@ const Process = () => {
                     </span>
                   </div>
                   <p style={{
+                    fontFamily: 'var(--font-body)',
                     fontSize: '14px',
-                    color: 'var(--text-muted)',
+                    color: 'var(--text-body)',
                     lineHeight: '1.6',
                     maxHeight: activeStep === i ? '80px' : '0',
                     overflow: 'hidden',
@@ -170,8 +183,8 @@ const Process = () => {
           {/* Visual Preview */}
           <div className="reveal reveal-delay-3" style={{ position: 'relative' }}>
             <div style={{
-              background: '#111111',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-card)',
               borderRadius: '24px',
               padding: '40px',
               position: 'relative',
@@ -199,10 +212,10 @@ const Process = () => {
                   {steps[activeStep].icon}
                 </div>
 
-                <h3 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: '800', marginBottom: '16px', letterSpacing: '-0.02em', color: 'var(--text-heading)' }}>
                   {steps[activeStep].title}
                 </h3>
-                <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '32px' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '15px', color: 'var(--text-body)', lineHeight: '1.7', marginBottom: '32px' }}>
                   {steps[activeStep].description}
                 </p>
 

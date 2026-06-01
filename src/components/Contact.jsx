@@ -9,19 +9,32 @@ const Contact = () => {
   const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
 
   const inputStyle = (name) => ({
-    width: '100%', background: focused===name ? 'rgba(108,99,255,0.05)' : 'rgba(255,255,255,0.03)',
-    border: `1px solid ${focused===name ? 'rgba(108,99,255,0.4)' : 'rgba(255,255,255,0.08)'}`,
-    borderRadius: '12px', padding: '13px 15px', color: 'white',
-    fontSize: '15px', fontFamily: 'var(--font-primary)', outline: 'none',
+    width: '100%',
+    background: focused===name ? 'rgba(67,56,202,0.07)' : 'rgba(255,255,255,0.03)',
+    border: `1px solid ${focused===name ? 'rgba(67,56,202,0.45)' : 'var(--border-card)'}`,
+    borderRadius: '12px', padding: '13px 15px',
+    color: 'var(--text-heading)',
+    fontSize: '15px', fontFamily: 'var(--font-body)', outline: 'none',
     transition: 'all 0.3s ease',
-    boxShadow: focused===name ? '0 0 20px rgba(108,99,255,0.1)' : 'none',
+    boxShadow: focused===name ? '0 0 20px rgba(67,56,202,0.12)' : 'none',
   });
 
-  const labelStyle = { display:'block', fontSize:'13px', fontWeight:'600', color:'var(--text-secondary)', marginBottom:'8px' };
+  const labelStyle = { display:'block', fontFamily: 'var(--font-body)', fontSize:'13px', fontWeight:'600', color:'var(--text-body)', marginBottom:'8px' };
 
   return (
-    <section id="kontak" className="section" style={{ background:'var(--bg-secondary)' }}>
-      <div className="container">
+    <section id="kontak" style={{ position: 'relative', overflow: 'hidden', background: '#080c18', padding: '100px 0' }}>
+
+      {/* ── Fading divider top ── */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(to right, transparent, rgba(229,222,255,0.06), transparent)' }} />
+
+      {/* ── Grid texture ── */}
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(to right, #111827 1px, transparent 1px), linear-gradient(to bottom, #111827 1px, transparent 1px)', backgroundSize: '4rem 4rem', opacity: 0.28, pointerEvents: 'none' }} />
+
+      {/* ── Ambient blobs ── */}
+      <div style={{ position: 'absolute', top: '-60px', left: '-80px', width: '440px', height: '440px', borderRadius: '50%', background: '#4338CA', opacity: 0.09, filter: 'blur(120px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '-60px', right: '-60px', width: '360px', height: '360px', borderRadius: '50%', background: '#1D4ED8', opacity: 0.08, filter: 'blur(120px)', pointerEvents: 'none' }} />
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="contact-grid">
           {/* Left */}
           <div>
@@ -29,7 +42,7 @@ const Contact = () => {
             <h2 className="section-title reveal reveal-delay-1">
               Mulai Proyek<br /><span className="gradient-text">Impian Anda</span>
             </h2>
-            <p className="reveal reveal-delay-2" style={{ color:'var(--text-secondary)', lineHeight:'1.7', marginBottom:'40px', fontSize:'clamp(14px, 1.8vw, 16px)' }}>
+            <p className="reveal reveal-delay-2" style={{ fontFamily:'var(--font-body)', color:'var(--text-body)', lineHeight:'1.7', marginBottom:'40px', fontSize:'clamp(14px, 1.8vw, 16px)' }}>
               Ceritakan proyek Anda kepada kami. Kami akan merespons dalam waktu kurang dari 24 jam.
             </p>
 
@@ -39,25 +52,25 @@ const Contact = () => {
                 { icon:'📧', label:'Email', value:'ridho245678@gmail.com', href:'mailto:ridho245678@gmail.com' },
                 { icon:'📍', label:'Lokasi', value:'Jakarta, Indonesia', href:'#' },
               ].map(item => (
-                <a key={item.label} href={item.href} style={{ display:'flex', alignItems:'center', gap:'14px', padding:'14px 18px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.06)', borderRadius:'14px', textDecoration:'none', transition:'all 0.3s ease' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor='rgba(108,99,255,0.3)'; e.currentTarget.style.transform='translateX(4px)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor='rgba(255,255,255,0.06)'; e.currentTarget.style.transform='translateX(0)'; }}
+                <a key={item.label} href={item.href} style={{ display:'flex', alignItems:'center', gap:'14px', padding:'14px 18px', background:'rgba(255,255,255,0.03)', border:'1px solid var(--border-card)', borderRadius:'14px', textDecoration:'none', transition:'all 0.3s ease' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor='rgba(67,56,202,0.4)'; e.currentTarget.style.transform='translateX(4px)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor='var(--border-card)'; e.currentTarget.style.transform='translateX(0)'; }}
                 >
                   <span style={{ fontSize:'20px' }}>{item.icon}</span>
                   <div>
-                    <div style={{ fontSize:'11px', color:'var(--text-muted)', fontWeight:'600', letterSpacing:'0.05em' }}>{item.label}</div>
-                    <div style={{ fontSize:'14px', color:'white', fontWeight:'500' }}>{item.value}</div>
+                    <div style={{ fontFamily:'var(--font-body)', fontSize:'11px', color:'var(--text-muted)', fontWeight:'600', letterSpacing:'0.05em' }}>{item.label}</div>
+                    <div style={{ fontFamily:'var(--font-body)', fontSize:'14px', color:'var(--text-heading)', fontWeight:'500' }}>{item.value}</div>
                   </div>
                 </a>
               ))}
             </div>
 
-            <div className="reveal reveal-delay-4" style={{ padding:'18px', background:'rgba(0,217,165,0.06)', border:'1px solid rgba(0,217,165,0.15)', borderRadius:'14px' }}>
+            <div className="reveal reveal-delay-4" style={{ padding:'18px', background:'rgba(67,56,202,0.08)', border:'1px solid rgba(67,56,202,0.2)', borderRadius:'14px' }}>
               <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
                 <span style={{ fontSize:'22px' }}>⚡</span>
                 <div>
-                  <div style={{ fontSize:'13px', fontWeight:'700', color:'#00D9A5' }}>Rata-rata response time</div>
-                  <div style={{ fontSize:'12px', color:'var(--text-secondary)' }}>Kami biasanya membalas dalam <strong style={{ color:'white' }}>2–4 jam</strong> pada hari kerja</div>
+                  <div style={{ fontFamily:'var(--font-heading)', fontSize:'13px', fontWeight:'700', color:'#818CF8' }}>Rata-rata response time</div>
+                  <div style={{ fontFamily:'var(--font-body)', fontSize:'12px', color:'var(--text-body)' }}>Kami biasanya membalas dalam <strong style={{ color:'var(--text-heading)', fontFamily:'var(--font-heading)' }}>2–4 jam</strong> pada hari kerja</div>
                 </div>
               </div>
             </div>
@@ -77,7 +90,7 @@ const Contact = () => {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ background:'#111', border:'1px solid rgba(255,255,255,0.06)', borderRadius:'24px', padding:'clamp(24px, 4vw, 40px)' }}>
+              <form onSubmit={handleSubmit} style={{ background:'var(--bg-card)', border:'1px solid var(--border-card)', borderRadius:'24px', padding:'clamp(24px, 4vw, 40px)' }}>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'14px', marginBottom:'14px' }} className="form-row">
                   <div>
                     <label style={labelStyle}>Nama Lengkap *</label>
@@ -117,10 +130,10 @@ const Contact = () => {
                   <textarea name="message" value={formData.message} onChange={handleChange} onFocus={() => setFocused('message')} onBlur={() => setFocused(null)} placeholder="Ceritakan goals, fitur yang diinginkan, timeline, dan detail proyek Anda..." required rows="4" style={{ ...inputStyle('message'), resize:'vertical', minHeight:'110px' }} />
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width:'100%', justifyContent:'center', padding:'15px', fontSize:'15px', fontFamily:'var(--font-primary)' }}>
+                <button type="submit" className="btn-primary" style={{ width:'100%', justifyContent:'center', padding:'15px', fontSize:'15px', fontFamily:'var(--font-heading)' }}>
                   Kirim Pesan Sekarang 🚀
                 </button>
-                <p style={{ textAlign:'center', fontSize:'12px', color:'var(--text-muted)', marginTop:'14px' }}>
+                <p style={{ fontFamily:'var(--font-body)', textAlign:'center', fontSize:'12px', color:'var(--text-muted)', marginTop:'14px' }}>
                   Konsultasi pertama gratis · Tidak ada komitmen
                 </p>
               </form>

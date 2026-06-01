@@ -7,7 +7,7 @@ const projects = [
     tags: ["Laravel 12", "Tailwind 4", "Filament"],
     description:
       "Sistem Management Point of Sales (POS) modern untuk UMKM kuliner dengan fitur manajemen stok, laporan penjualan otomatis, dan admin panel Filament.",
-    accent: "#6C63FF",
+    accent: "#4338CA",
     result: "Efisiensi stok +150%",
     image: "/images/sando.png",
   },
@@ -17,9 +17,31 @@ const projects = [
     tags: ["Laravel 10", "Bootstrap"],
     description:
       "Aplikasi pemesanan kamar hotel (Booking System) yang mencakup manajemen reservasi, cek ketersediaan real-time, dan sistem billing tamu.",
-    accent: "#EC4899",
+    accent: "#7C3AED",
     result: "Booking rate +200%",
     image: "/images/hotel.png",
+  },
+  {
+    title: "EQUIL.",
+    category: "Web App",
+    tags: ["Next.js", "Tailwind", "AI"],
+    description:
+      "Dashboard personal (System Archive) yang mengintegrasikan manajemen produktivitas, mental well-being, dan arsip karier dalam satu antarmuka minimalis.",
+    accent: "#7C3AED",
+    result: "70% fokus meningkat",
+    image: "/images/equil.png",
+    href: "https://equil-sanctuary-221944059136.asia-southeast2.run.app/",
+  },
+  {
+    title: "UKM Basket MNC",
+    category: "Website",
+    tags: ["WordPress", "Tailwind", "Vanilla JS"],
+    description:
+      "Website komunitas berkonsep Sporty Minimalism & Dark Mode Premium dengan layout Bento Grid responsif dan interaksi mobile drawer berbasis Vanilla JS murni.",
+    accent: "#1D4ED8",
+    result: "500+ anggota aktif terintegrasi",
+    image: "/images/ukm.png",
+    href: "https://dev-ukmbasketmnc.pantheonsite.io/",
   },
   {
     title: "Slicing Brawl",
@@ -27,32 +49,32 @@ const projects = [
     tags: ["HTML", "Bootstrap"],
     description:
       "Implementasi desain UI kompleks ke dalam kode (Slicing) yang sangat responsif, memastikan presisi pixel yang sempurna antara desain dan web.",
-    accent: "#FFB347",
+    accent: "#1D4ED8",
     result: "Speed Index < 1.2s",
     image: "/images/slicing.png",
     href: "https://slicingbrawl.vercel.app/",
   },
   {
-    title: "Sejarah Bandung",
-    category: "Landing Page",
-    tags: ["HTML", "CSS"],
+    title: "Kard",
+    category: "Website",
+    tags: ["WordPress", "Tailwind", "Vanilla JS"],
     description:
-      "Landing page edukatif yang menyajikan informasi sejarah Kota Bandung dengan layout interaktif, galeri foto arsip, dan tipografi yang elegan.",
-    accent: "#00D9A5",
-    result: "Aksesibilitas 100%",
-    image: "/images/bandung.png",
-    href: "https://sejarahbandung.vercel.app/",
+      "Landing Page / Portofolio Hub interaktif untuk agensi rekayasa digital bernama KARD.ID. Website ini dirancang dengan konsep visual ala Cybersecurity Operations Center.",
+    accent: "#7C3AED",
+    result: "12ms latency optimal",
+    image: "/images/kard.png",
+    href: "https://azkaaa77.github.io/kard/",
   },
   {
-    title: "Biodata Personal",
+    title: "About Bandung",
     category: "Landing Page",
     tags: ["HTML", "CSS"],
     description:
-      "Kartu nama digital (Link-in-bio) atau portofolio personal minimalis untuk menampilkan profil, keahlian, dan kontak sosial media secara profesional.",
-    accent: "#6C63FF",
-    result: "+500 visitor/bulan",
-    image: "/images/profile.png",
-    href: "https://websitebiodata.vercel.app/",
+      "Website portal informasi kota (City Guide & Cultural Platform) dengan visual dark mode premium yang merangkum sejarah asal-usul, topografi geografi, hingga destinasi wisata ikonik.",
+    accent: "#4338CA",
+    result: "562+ titik data kultural terarsip",
+    image: "/images/bandung.png",
+    href: "https://azkaaa77.github.io/aboutbandung/",
   },
   {
     title: "Nailong Fan Page",
@@ -60,9 +82,20 @@ const projects = [
     tags: ["React"],
     description:
       "Landing page bertema karakter populer dengan animasi interaktif berbasis React, didesain khusus untuk engagement audiens yang tinggi.",
-    accent: "#FFB347",
+    accent: "#1D4ED8",
     result: "40% efisiensi meningkat",
     image: "/images/nailong.png",
+  },
+  {
+    title: "AzzzK SPACE",
+    category: "Landing Page",
+    tags: ["HTML", "CSS"],
+    description:
+      "ebsite ensiklopedia astronomi (Space Hub) berkonsep Sci-Fi dengan fitur eksplorasi objek antariksa interaktif dan tata letak data semesta yang futuristik.",
+    accent: "#7C3AED",
+    result: "2,000+ objek kosmis terpetakan",
+    image: "/images/galaxy.png",
+    href: "https://azkaaa77.github.io/galaxy/",
   },
 ];
 
@@ -200,10 +233,70 @@ const Portfolio = () => {
   return (
     <section
       id="portofolio"
-      className="section"
-      style={{ background: "var(--bg-secondary)" }}
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        background: "#080c18",
+        padding: "100px 0",
+      }}
     >
-      <div className="container">
+      {/* ── Fading divider top ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "1px",
+          background:
+            "linear-gradient(to right, transparent, rgba(229,222,255,0.06), transparent)",
+        }}
+      />
+
+      {/* ── Grid texture ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage:
+            "linear-gradient(to right, #111827 1px, transparent 1px), linear-gradient(to bottom, #111827 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+          opacity: 0.3,
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* ── Ambient blobs ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-80px",
+          right: "-60px",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background: "#4338CA",
+          opacity: 0.09,
+          filter: "blur(120px)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-60px",
+          left: "-80px",
+          width: "420px",
+          height: "420px",
+          borderRadius: "50%",
+          background: "#1D4ED8",
+          opacity: 0.08,
+          filter: "blur(120px)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div style={{ marginBottom: "40px" }}>
           <div className="section-label reveal">Portofolio</div>
           <div
@@ -246,7 +339,7 @@ const Portfolio = () => {
                     border: "none",
                     background:
                       activeCategory === cat
-                        ? "var(--accent-primary)"
+                        ? "linear-gradient(135deg, #4338CA, #1D4ED8)"
                         : "transparent",
                     color:
                       activeCategory === cat ? "white" : "var(--text-muted)",
@@ -254,7 +347,7 @@ const Portfolio = () => {
                     fontWeight: "600",
                     cursor: "pointer",
                     transition: "all 0.2s",
-                    fontFamily: "var(--font-primary)",
+                    fontFamily: "var(--font-heading)",
                   }}
                 >
                   {cat}
@@ -275,7 +368,7 @@ const Portfolio = () => {
                 background: "var(--bg-card)",
                 border: "1px solid var(--border-subtle)",
                 borderRadius: "20px",
-                padding: "20px",
+                padding: "14px",
                 cursor: "pointer",
                 transition: "all 0.4s var(--ease-smooth)",
                 transform:
@@ -286,8 +379,8 @@ const Portfolio = () => {
                     : "none",
                 borderColor:
                   hoveredIdx === i
-                    ? `${project.accent}30`
-                    : "var(--border-subtle)",
+                    ? `${project.accent}40`
+                    : "var(--border-card)",
               }}
             >
               <MockupDisplay accent={project.accent} image={project.image} />
@@ -330,9 +423,11 @@ const Portfolio = () => {
                 </div>
                 <h3
                   style={{
+                    fontFamily: "var(--font-heading)",
                     fontSize: "clamp(15px, 2vw, 18px)",
                     fontWeight: "700",
                     marginBottom: "8px",
+                    color: "var(--text-heading)",
                   }}
                 >
                   <a
@@ -354,8 +449,9 @@ const Portfolio = () => {
                 </h3>
                 <p
                   style={{
+                    fontFamily: "var(--font-body)",
                     fontSize: "13px",
-                    color: "var(--text-secondary)",
+                    color: "var(--text-body)",
                     lineHeight: "1.6",
                     marginBottom: "14px",
                   }}
@@ -401,7 +497,13 @@ const Portfolio = () => {
           className="reveal"
           style={{ textAlign: "center", marginTop: "48px" }}
         >
-          <p style={{ color: "var(--text-secondary)", marginBottom: "16px" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              color: "var(--text-body)",
+              marginBottom: "16px",
+            }}
+          >
             Tertarik dengan hasil seperti ini?
           </p>
           <a
