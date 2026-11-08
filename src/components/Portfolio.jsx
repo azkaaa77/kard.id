@@ -339,7 +339,7 @@ const Portfolio = () => {
                     border: "none",
                     background:
                       activeCategory === cat
-                        ? "linear-gradient(135deg, #4338CA, #1D4ED8)"
+                        ? "var(--accent-primary)"
                         : "transparent",
                     color:
                       activeCategory === cat ? "white" : "var(--text-muted)",
@@ -365,22 +365,24 @@ const Portfolio = () => {
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
               style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border-subtle)",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.09)",
                 borderRadius: "20px",
                 padding: "14px",
                 cursor: "pointer",
                 transition: "all 0.4s var(--ease-smooth)",
+                backdropFilter: "blur(14px)",
+                WebkitBackdropFilter: "blur(14px)",
                 transform:
                   hoveredIdx === i ? "translateY(-6px)" : "translateY(0)",
-                boxShadow:
-                  hoveredIdx === i
-                    ? `0 20px 60px ${project.accent}20, 0 0 0 1px ${project.accent}30`
-                    : "none",
                 borderColor:
                   hoveredIdx === i
-                    ? `${project.accent}40`
-                    : "var(--border-card)",
+                    ? `${project.accent}50`
+                    : "rgba(255,255,255,0.09)",
+                boxShadow:
+                  hoveredIdx === i
+                    ? `0 20px 60px ${project.accent}20, 0 0 0 1px ${project.accent}30, inset 0 1px 0 rgba(255,255,255,0.08)`
+                    : "0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)",
               }}
             >
               <MockupDisplay accent={project.accent} image={project.image} />

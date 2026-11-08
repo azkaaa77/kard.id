@@ -32,8 +32,12 @@
   --border-hover:  #4338CA;
 
   /* Glass */
-  --glass-bg:     rgba(255,255,255,0.03);
-  --glass-border: rgba(255,255,255,0.08);
+  --glass-bg:     rgba(255,255,255,0.045);
+  --glass-bg-hover: rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.1);
+  --glass-border-hover: rgba(255,255,255,0.18);
+  --glass-blur:   blur(16px);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
 
   /* Shadows */
   --shadow-card:  0 4px 24px rgba(0,0,0,0.5);
@@ -103,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 8px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--grad-btn-start), var(--grad-btn-end));
+  background: var(--accent-primary);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -116,16 +120,17 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(67,56,202,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
 }
 .btn-primary::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
+  background: rgba(255,255,255,0.12);
   opacity: 0;
   transition: opacity 0.3s;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(67,56,202,0.45); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(67,56,202,0.5), inset 0 1px 0 rgba(255,255,255,0.15); }
 .btn-primary:hover::before { opacity: 1; }
 .btn-primary:active { transform: translateY(0); }
 
@@ -135,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 8px;
   padding: 14px 28px;
-  background: transparent;
+  background: rgba(255,255,255,0.05);
   color: var(--text-heading);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
@@ -146,8 +151,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s var(--ease-smooth);
   text-decoration: none;
   white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-.btn-secondary:hover { border-color: var(--accent-primary); background: rgba(67,56,202,0.12); transform: translateY(-2px); }
+.btn-secondary:hover { border-color: rgba(67,56,202,0.5); background: rgba(67,56,202,0.1); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(67,56,202,0.2); }
 
 /* ===== LAYOUT ===== */
 .section { padding: 100px 0; position: relative; }
@@ -195,20 +202,31 @@ h1, h2, h3, h4, h5, h6 {
 .glass-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+  transition: background 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
+}
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 .card-base {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
-  transition: border-color 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--glass-shadow);
+  transition: border-color 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth), background 0.35s var(--ease-smooth);
 }
 .card-base:hover {
-  border-color: var(--border-hover);
+  background: rgba(255,255,255,0.065);
+  border-color: rgba(67,56,202,0.5);
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(67,56,202,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(67,56,202,0.18), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 /* ===== NOISE OVERLAY ===== */
@@ -228,6 +246,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
 @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes gradient-shift { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
 /* ===== REVEAL SCROLL ===== */
 .reveal {

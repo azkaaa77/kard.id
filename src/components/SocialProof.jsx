@@ -36,7 +36,7 @@ const SocialProof = () => (
           <div
             key={brand.name}
             className={`reveal reveal-delay-${(i % 4) + 1}`}
-            style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '7px 16px', background: 'rgba(17,24,39,0.6)', border: '1px solid rgba(229,222,255,0.06)', borderRadius: '100px', backdropFilter: 'blur(8px)', transition: 'all 0.3s ease', cursor: 'default' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '7px 16px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: '100px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', transition: 'all 0.3s ease', cursor: 'default' }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(67,56,202,0.45)'; e.currentTarget.style.background = 'rgba(67,56,202,0.1)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(229,222,255,0.06)'; e.currentTarget.style.background = 'rgba(17,24,39,0.6)'; }}
           >

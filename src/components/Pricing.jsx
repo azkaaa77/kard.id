@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Star, ShieldCheck } from 'lucide-react';
 
 const plans = [
   {
@@ -74,7 +75,7 @@ const Pricing = () => {
                   padding: '10px 18px',
                   borderRadius: '8px',
                   border: 'none',
-                  background: activeService === t.key ? 'linear-gradient(135deg, #4338CA, #1D4ED8)' : 'transparent',
+                  background: activeService === t.key ? 'var(--accent-primary)' : 'transparent',
                   color: activeService === t.key ? 'white' : 'var(--text-muted)',
                   fontFamily: 'var(--font-heading)',
                   fontSize: '14px',
@@ -97,15 +98,18 @@ const Pricing = () => {
               key={plan.name}
               className={`reveal reveal-delay-${i + 1}`}
               style={{
-                background: plan.popular ? 'rgba(17,24,39,0.95)' : 'rgba(17,24,39,0.6)',
-                border: `1px solid ${plan.popular ? `${plan.accentFrom}50` : 'rgba(229,222,255,0.07)'}`,
+                background: plan.popular ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.04)',
+                border: `1px solid ${plan.popular ? `${plan.accentFrom}55` : 'rgba(255,255,255,0.08)'}`,
                 borderRadius: '24px',
                 padding: 'clamp(24px, 3vw, 36px)',
                 position: 'relative',
                 overflow: 'hidden',
-                backdropFilter: 'blur(16px)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
                 transition: 'all 0.4s ease',
-                boxShadow: plan.popular ? `0 0 80px ${plan.accentFrom}18, 0 32px 64px rgba(0,0,0,0.5)` : 'none',
+                boxShadow: plan.popular
+                  ? `0 0 0 1px ${plan.accentFrom}30, 0 32px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)`
+                  : '0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04)',
               }}
             >
               {/* Card ambient glow */}
@@ -113,7 +117,7 @@ const Pricing = () => {
 
               {plan.popular && (
                 <div style={{ position: 'absolute', top: '-40px', left: '50%', transform: 'translateX(-50%)', background: `linear-gradient(135deg, ${plan.accentFrom}, ${plan.accentTo})`, color: 'white', fontFamily: 'var(--font-heading)', fontSize: '12px', fontWeight: '700', padding: '4px 16px', borderRadius: '100px', whiteSpace: 'nowrap', boxShadow: `0 0 20px ${plan.accentFrom}50` }}>
-                  ⭐ TERPOPULER
+                  <Star size={12} fill="white" color="white" strokeWidth={0} style={{ display: 'inline-block', marginRight: '4px' }} /> TERPOPULER
                 </div>
               )}
               <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '60%', height: '1px', background: `linear-gradient(90deg, transparent, ${plan.accentFrom}, transparent)` }} />
@@ -178,7 +182,7 @@ const Pricing = () => {
 
         <div className="reveal" style={{ textAlign: 'center', marginTop: '40px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'var(--font-body)', color: 'var(--text-muted)', fontSize: '14px', padding: '12px 24px', background: 'rgba(17,24,39,0.6)', border: '1px solid rgba(229,222,255,0.07)', borderRadius: '100px', backdropFilter: 'blur(8px)' }}>
-            <span style={{ fontSize: '18px' }}>🛡️</span>
+            <ShieldCheck size={16} color="#818CF8" strokeWidth={1.8} />
             Konsultasi awal <strong style={{ color: '#E5DEFF', fontFamily: 'var(--font-heading)' }}>GRATIS</strong> · Contract terjamin · Revisi inklusif
           </div>
         </div>

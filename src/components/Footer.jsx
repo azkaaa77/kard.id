@@ -1,4 +1,5 @@
 import React from 'react';
+import { MessageCircle } from 'lucide-react';
 
 const techStack = [
   'React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL',
@@ -29,7 +30,7 @@ const Footer = () => (
   <footer style={{ background: 'var(--bg-base)', paddingTop: '80px' }}>
     {/* CTA Banner */}
     <div className="container" style={{ marginBottom: '80px' }}>
-      <div className="reveal" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-card)', borderRadius: '28px', padding: 'clamp(40px, 6vw, 64px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <div className="reveal" style={{ background: 'rgba(255,255,255,0.045)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '28px', padding: 'clamp(40px, 6vw, 64px)', textAlign: 'center', position: 'relative', overflow: 'hidden', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', boxShadow: '0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)' }}>
         {/* Orbs */}
         <div style={{ position: 'absolute', top: '-100px', left: '-100px', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(67,56,202,0.18), transparent)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-100px', right: '-100px', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(124,58,237,0.12), transparent)', pointerEvents: 'none' }} />
@@ -46,8 +47,8 @@ const Footer = () => (
             <a href="#kontak" onClick={(e) => { e.preventDefault(); document.querySelector('#kontak').scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary" style={{ fontSize: '16px', padding: '18px 40px' }}>
               Mulai Sekarang, Gratis →
             </a>
-            <a href="https://wa.me/6288973046705?text=Saya%20mau%20beli%20website" target="_blank" rel="noreferrer" className="btn-secondary" style={{ fontSize: '16px', padding: '18px 32px' }}>
-              💬 Chat WhatsApp
+            <a href="https://wa.me/6288973046705?text=Saya%20mau%20beli%20website" target="_blank" rel="noreferrer" className="btn-secondary" style={{ fontSize: '16px', padding: '18px 32px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <MessageCircle size={18} strokeWidth={1.8} /> Chat WhatsApp
             </a>
           </div>
         </div>
@@ -107,7 +108,7 @@ const Footer = () => (
       {/* Bottom bar */}
       <div className="footer-bottom">
         <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: 'var(--text-muted)' }}>
-          © 2026 kard.id. All rights reserved. Made with ❤️ by Azka.
+          © 2026 kard.id. All rights reserved. Made by Azka.
         </p>
         <div className="footer-bottom-links">
           {['Privacy', 'Terms', 'Sitemap'].map((item) => (

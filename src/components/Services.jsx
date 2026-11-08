@@ -1,8 +1,15 @@
 import React, { useRef } from 'react';
+import { Zap, Globe, Rocket, Check, ArrowRight } from 'lucide-react';
+
+const ServiceIcon = ({ name, accent }) => {
+  const icons = { Zap, Globe, Rocket };
+  const Icon = icons[name];
+  return Icon ? <Icon size={22} color={accent} strokeWidth={1.8} /> : null;
+};
 
 const services = [
   {
-    icon: '⚡',
+    iconName: 'Zap',
     title: 'Landing Page',
     description: 'Halaman yang dirancang untuk mengkonversi pengunjung menjadi pelanggan. Desain persuasif, CTA yang tepat, dan loading ultra-cepat.',
     features: ['Desain Konversi Tinggi', 'A/B Testing Ready', 'Mobile-First', 'Analytics Terintegrasi'],
@@ -10,7 +17,7 @@ const services = [
     badge: 'Populer',
   },
   {
-    icon: '🌐',
+    iconName: 'Globe',
     title: 'Website',
     description: 'Website profesional yang mencerminkan identitas brand Anda. Responsif, cepat, dan mudah dikelola melalui CMS.',
     features: ['CMS Custom', 'SEO Optimal', 'Multi-bahasa', 'Panel Admin'],
@@ -18,7 +25,7 @@ const services = [
     badge: 'Terlaris',
   },
   {
-    icon: '🚀',
+    iconName: 'Rocket',
     title: 'Web App',
     description: 'Aplikasi web kompleks dengan fitur-fitur canggih. Dari SaaS, marketplace, hingga platform internal perusahaan.',
     features: ['Arsitektur Scalable', 'API Integration', 'Real-time Features', 'Dashboard Analitik'],
@@ -61,15 +68,17 @@ const ServiceCard = ({ service, index }) => {
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
       style={{
-        background: '#111827',
-        border: '1px solid rgba(229,222,255,0.07)',
+        background: 'rgba(255,255,255,0.04)',
+        border: '1px solid rgba(255,255,255,0.09)',
         borderRadius: '20px',
         padding: 'clamp(24px, 3vw, 36px)',
         cursor: 'default',
-        transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+        transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease',
         position: 'relative',
         overflow: 'hidden',
-        backdropFilter: 'blur(12px)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        boxShadow: '0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)',
       }}
     >
       {/* Inner glow top */}
@@ -83,8 +92,8 @@ const ServiceCard = ({ service, index }) => {
       </div>
 
       {/* Icon */}
-      <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: `${service.accent}18`, border: `1px solid ${service.accent}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', marginBottom: '20px' }}>
-        {service.icon}
+      <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: `${service.accent}18`, border: `1px solid ${service.accent}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <ServiceIcon name={service.iconName} accent={service.accent} />
       </div>
 
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(18px, 2vw, 22px)', fontWeight: '700', marginBottom: '12px', color: '#E5DEFF' }}>
@@ -115,9 +124,7 @@ const ServiceCard = ({ service, index }) => {
         onMouseLeave={(e) => { e.currentTarget.style.gap = '8px'; }}
       >
         Diskusikan Proyek
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M3 8H13M9 4l4 4-4 4" stroke={service.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        <ArrowRight size={15} strokeWidth={2} color={service.accent} />
       </a>
     </div>
   );

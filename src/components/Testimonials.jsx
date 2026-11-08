@@ -53,14 +53,17 @@ const Testimonials = () => {
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
               style={{
-                background: hovered === i ? 'rgba(17,24,39,0.9)' : '#111827',
-                border: `1px solid ${hovered === i ? 'rgba(67,56,202,0.45)' : 'rgba(229,222,255,0.07)'}`,
+                background: hovered === i ? 'rgba(255,255,255,0.065)' : 'rgba(255,255,255,0.04)',
+                border: `1px solid ${hovered === i ? 'rgba(67,56,202,0.5)' : 'rgba(255,255,255,0.09)'}`,
                 borderRadius: '20px',
                 padding: 'clamp(20px, 3vw, 28px)',
                 transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
                 transform: hovered === i ? 'translateY(-6px)' : 'none',
-                boxShadow: hovered === i ? '0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(67,56,202,0.15)' : 'none',
-                backdropFilter: 'blur(12px)',
+                boxShadow: hovered === i
+                  ? '0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(67,56,202,0.18), inset 0 1px 0 rgba(255,255,255,0.08)'
+                  : '0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
                 position: 'relative',
                 overflow: 'hidden',
               }}

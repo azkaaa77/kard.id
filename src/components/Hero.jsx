@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { TrendingUp } from 'lucide-react';
 
 const Hero = () => {
   const cursorRef = useRef(null);
@@ -138,7 +139,7 @@ const HeroVisual = () => (
     </div>
 
     {/* Floating — Lighthouse */}
-    <div style={{ position: 'absolute', bottom: '60px', left: '-20px', background: '#111827', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '14px', padding: '16px 20px', boxShadow: '0 16px 40px rgba(0,0,0,0.6)', animation: 'float 5s ease-in-out infinite 1s', zIndex: 2, minWidth: '170px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ position: 'absolute', bottom: '60px', left: '-20px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '14px', padding: '16px 20px', boxShadow: '0 16px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)', animation: 'float 5s ease-in-out infinite 1s', zIndex: 2, minWidth: '170px', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: '10px', color: 'var(--text-muted)', marginBottom: '8px', fontWeight: '600', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Performa</div>
       <div style={{ fontFamily: 'var(--font-heading)', fontSize: '26px', fontWeight: '800', color: '#34D399', letterSpacing: '-0.02em' }}>98 / 100</div>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: '11px', color: 'var(--text-muted)', marginTop: '4px' }}>Google Lighthouse</div>
@@ -155,9 +156,9 @@ const HeroVisual = () => (
     </div>
 
     {/* Floating — Conversion */}
-    <div style={{ position: 'absolute', top: '20px', left: '-10px', background: '#111827', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '14px', padding: '14px 18px', boxShadow: '0 16px 40px rgba(0,0,0,0.6)', animation: 'float 7s ease-in-out infinite 2s', zIndex: 2, backdropFilter: 'blur(10px)' }}>
+    <div style={{ position: 'absolute', top: '20px', left: '-10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '14px', padding: '14px 18px', boxShadow: '0 16px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)', animation: 'float 7s ease-in-out infinite 2s', zIndex: 2, backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(67,56,202,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px' }}>📈</div>
+        <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(67,56,202,0.18)', border: '1px solid rgba(67,56,202,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><TrendingUp size={18} color="#818CF8" strokeWidth={1.8} /></div>
         <div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '10px', color: 'var(--text-muted)', fontWeight: '600', letterSpacing: '0.05em' }}>KONVERSI</div>
           <div style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: '800', color: 'var(--text-heading)' }}>+340%</div>

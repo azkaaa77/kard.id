@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Search, Paintbrush, Code2, FlaskConical, Rocket, Clock } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
     title: 'Discovery & Brief',
     description: 'Kami mulai dengan memahami bisnis, target audiens, dan goals Anda secara mendalam melalui sesi konsultasi.',
-    icon: '🔍',
+    icon: Search,
     duration: '1–2 Hari',
     accent: '#4338CA',
   },
@@ -13,7 +14,7 @@ const steps = [
     number: '02',
     title: 'Desain & Prototyping',
     description: 'Tim desainer kami merancang wireframe dan mockup high-fidelity yang bisa Anda review dan feedback sebelum development.',
-    icon: '🎨',
+    icon: Paintbrush,
     duration: '3–5 Hari',
     accent: '#7C3AED',
   },
@@ -21,7 +22,7 @@ const steps = [
     number: '03',
     title: 'Development',
     description: 'Pengembangan dilakukan dengan teknologi modern, clean code, dan daily progress update agar Anda selalu in-the-loop.',
-    icon: '⚙️',
+    icon: Code2,
     duration: '7–21 Hari',
     accent: '#1D4ED8',
   },
@@ -29,7 +30,7 @@ const steps = [
     number: '04',
     title: 'Testing & Revisi',
     description: 'QA menyeluruh di berbagai device dan browser. Anda mendapat 2 putaran revisi gratis hingga benar-benar puas.',
-    icon: '✅',
+    icon: FlaskConical,
     duration: '2–3 Hari',
     accent: '#4338CA',
   },
@@ -37,7 +38,7 @@ const steps = [
     number: '05',
     title: 'Launch & Support',
     description: 'Deploy ke server Anda atau rekomendasi kami, dilengkapi 30 hari free support paska-launch.',
-    icon: '🚀',
+    icon: Rocket,
     duration: '1 Hari',
     accent: '#7C3AED',
   },
@@ -98,7 +99,9 @@ const Process = () => {
                   borderRadius: '16px',
                   cursor: 'pointer',
                   transition: 'all 0.4s ease',
-                  background: activeStep === i ? 'rgba(67,56,202,0.07)' : 'transparent',
+                  background: activeStep === i ? 'rgba(67,56,202,0.1)' : 'transparent',
+                  border: activeStep === i ? '1px solid rgba(67,56,202,0.2)' : '1px solid transparent',
+                  backdropFilter: activeStep === i ? 'blur(8px)' : 'none',
                   position: 'relative',
                 }}
               >
@@ -183,12 +186,15 @@ const Process = () => {
           {/* Visual Preview */}
           <div className="reveal reveal-delay-3" style={{ position: 'relative' }}>
             <div style={{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border-card)',
+              background: 'rgba(255,255,255,0.045)',
+              border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '24px',
               padding: '40px',
               position: 'relative',
               overflow: 'hidden',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.07)',
             }}>
               {/* Glow */}
               <div style={{
@@ -205,11 +211,14 @@ const Process = () => {
 
               <div style={{ position: 'relative' }}>
                 <div style={{
-                  fontSize: '48px',
+                  width: '72px', height: '72px', borderRadius: '20px',
+                  background: `${steps[activeStep].accent}18`,
+                  border: `1px solid ${steps[activeStep].accent}30`,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: '20px',
-                  filter: 'drop-shadow(0 0 20px rgba(108,99,255,0.3))',
+                  boxShadow: `0 0 24px ${steps[activeStep].accent}20`,
                 }}>
-                  {steps[activeStep].icon}
+                  {React.createElement(steps[activeStep].icon, { size: 32, color: steps[activeStep].accent, strokeWidth: 1.6 })}
                 </div>
 
                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: '800', marginBottom: '16px', letterSpacing: '-0.02em', color: 'var(--text-heading)' }}>
@@ -248,10 +257,7 @@ const Process = () => {
                   borderRadius: '10px',
                   padding: '8px 16px',
                 }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <circle cx="7" cy="7" r="6" stroke={steps[activeStep].accent} strokeWidth="1.5"/>
-                    <path d="M7 4V7L9 9" stroke={steps[activeStep].accent} strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
+                  <Clock size={14} color={steps[activeStep].accent} strokeWidth={1.5} />
                   <span style={{ fontSize: '13px', color: steps[activeStep].accent, fontWeight: '600' }}>
                     Estimasi: {steps[activeStep].duration}
                   </span>
