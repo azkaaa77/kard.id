@@ -149,91 +149,201 @@ const Contact = () => {
                 marginBottom: "36px",
               }}
             >
-              {[
-                {
-                  icon: MessageCircle,
-                  label: "WhatsApp",
-                  value: "+62 889-7304-6705",
-                  href: "https://wa.me/+62-889-7304-6705",
-                },
-                {
-                  icon: Mail,
-                  label: "Email",
-                  value: "ridho245678@gmail.com",
-                  href: "mailto:ridho245678@gmail.com",
-                },
-                {
-                  icon: MapPin,
-                  label: "Lokasi",
-                  value: "Jakarta, Indonesia",
-                  href: "#",
-                },
-              ].map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
+              <a
+                href="https://wa.me/6288973046705"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px",
+                  padding: "14px 18px",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.09)",
+                  borderRadius: "14px",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(67,56,202,0.4)";
+                  e.currentTarget.style.transform = "translateX(4px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-card)";
+                  e.currentTarget.style.transform = "translateX(0)";
+                }}
+              >
+                <div
                   style={{
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "10px",
+                    background: "rgba(67,56,202,0.12)",
+                    border: "1px solid rgba(67,56,202,0.2)",
                     display: "flex",
                     alignItems: "center",
-                    gap: "14px",
-                    padding: "14px 18px",
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.09)",
-                    borderRadius: "14px",
-                    textDecoration: "none",
-                    transition: "all 0.3s ease",
-                    backdropFilter: "blur(10px)",
-                    WebkitBackdropFilter: "blur(10px)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(67,56,202,0.4)";
-                    e.currentTarget.style.transform = "translateX(4px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--border-card)";
-                    e.currentTarget.style.transform = "translateX(0)";
+                    justifyContent: "center",
+                    flexShrink: 0,
                   }}
                 >
+                  <MessageCircle size={18} color="#818CF8" strokeWidth={1.8} />
+                </div>
+                <div>
                   <div
                     style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "10px",
-                      background: "rgba(67,56,202,0.12)",
-                      border: "1px solid rgba(67,56,202,0.2)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
+                      fontFamily: "var(--font-body)",
+                      fontSize: "11px",
+                      color: "var(--text-muted)",
+                      fontWeight: "600",
+                      letterSpacing: "0.05em",
                     }}
                   >
-                    <item.icon size={18} color="#818CF8" strokeWidth={1.8} />
+                    WhatsApp
                   </div>
-                  <div>
-                    <div
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: "11px",
-                        color: "var(--text-muted)",
-                        fontWeight: "600",
-                        letterSpacing: "0.05em",
-                      }}
-                    >
-                      {item.label}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: "14px",
-                        color: "var(--text-heading)",
-                        fontWeight: "500",
-                      }}
-                    >
-                      {item.value}
-                    </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "14px",
+                      color: "var(--text-heading)",
+                      fontWeight: "500",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    Azka: +62 856-4803-2087{" "}
+                    <span
+                      style={{ fontSize: "12px", color: "var(--text-muted)" }}
+                    ></span>
+                    <br />
+                    Ridho: +62 889-7304-6705{" "}
+                    <span
+                      style={{ fontSize: "12px", color: "var(--text-muted)" }}
+                    ></span>
                   </div>
-                </a>
-              ))}
+                </div>
+              </a>
+
+              <a
+                href="mailto:azzzzk366@gmail.com"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px",
+                  padding: "14px 18px",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.09)",
+                  borderRadius: "14px",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(67,56,202,0.4)";
+                  e.currentTarget.style.transform = "translateX(4px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--border-card)";
+                  e.currentTarget.style.transform = "translateX(0)";
+                }}
+              >
+                <div
+                  style={{
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "10px",
+                    background: "rgba(67,56,202,0.12)",
+                    border: "1px solid rgba(67,56,202,0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <Mail size={18} color="#818CF8" strokeWidth={1.8} />
+                </div>
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "11px",
+                      color: "var(--text-muted)",
+                      fontWeight: "600",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    Email
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "14px",
+                      color: "var(--text-heading)",
+                      fontWeight: "500",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    azzzzk366@gmail.com
+                    <br />
+                    ridho245678@gmail.com
+                  </div>
+                </div>
+              </a>
+
+              {/* Card Lokasi */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px",
+                  padding: "14px 18px",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.09)",
+                  borderRadius: "14px",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                }}
+              >
+                <div
+                  style={{
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "10px",
+                    background: "rgba(67,56,202,0.12)",
+                    border: "1px solid rgba(67,56,202,0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <MapPin size={18} color="#818CF8" strokeWidth={1.8} />
+                </div>
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "11px",
+                      color: "var(--text-muted)",
+                      fontWeight: "600",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    Lokasi
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "14px",
+                      color: "var(--text-heading)",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Jakarta, Indonesia
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div
